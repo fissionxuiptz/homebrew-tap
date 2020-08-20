@@ -20,7 +20,7 @@ class OpensslAT10 < Formula
     ENV.deparallelize
     args = %W[
       --prefix=#{prefix}
-      --openssldir=#{openssldir.tap { |dir| pp dir }}
+      --openssldir=#{openssldir}
       no-ssl2
       no-ssl3
       no-zlib
@@ -37,7 +37,7 @@ class OpensslAT10 < Formula
   end
 
   def openssldir
-    etc.tap { |dir| pp dir }/"openssl"
+    etc/"openssl@1.0"
   end
 
   def post_install
